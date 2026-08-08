@@ -3,33 +3,29 @@ import { JobAd } from '../src/types';
 
 export async function generateExcelWorkbook(jobs: JobAd[]): Promise<Buffer> {
   const workbook = new ExcelJS.Workbook();
-  workbook.creator = 'InduPaper Prabhat Khabar Scraper';
-  workbook.lastModifiedBy = 'InduPaper Research Tool';
+  workbook.creator = 'Prabhat Khabar E-Paper Intelligence Tool';
+  workbook.lastModifiedBy = 'Prabhat Khabar E-Paper Intelligence Tool';
   workbook.created = new Date();
 
   // -------------------------------------------------------------
   // Sheet 1: All Job Advertisements (Main Master Sheet)
   // -------------------------------------------------------------
-  const sheet1 = workbook.addWorksheet('Job Advertisements 2024-Present');
+  const sheet1 = workbook.addWorksheet('Job Advertisements');
 
   sheet1.columns = [
-    { header: 'Newspaper', key: 'newspaper', width: 18 },
-    { header: 'Edition', key: 'edition', width: 20 },
+    { header: 'Newspaper', key: 'newspaper', width: 20 },
+    { header: 'Edition', key: 'edition', width: 24 },
     { header: 'Date', key: 'date', width: 14 },
-    { header: 'Page Number', key: 'page_number', width: 14 },
-    { header: 'Company / Organization', key: 'company', width: 32 },
-    { header: 'Job Title / Designation', key: 'job_title', width: 32 },
+    { header: 'Page Number', key: 'page_number', width: 16 },
+    { header: 'Company / Organization', key: 'company', width: 36 },
+    { header: 'Job Title / Designation', key: 'job_title', width: 36 },
     { header: 'Job Location', key: 'job_location', width: 24 },
-    { header: 'Original Advertisement (Verbatim)', key: 'original_advertisement', width: 55 },
-    { header: 'Category / Sector', key: 'category', width: 22 },
-    { header: 'Qualification & Experience', key: 'qualification', width: 30 },
-    { header: 'Deadline / Interview Date', key: 'deadline', width: 18 },
-    { header: 'Contact / Website / Phone', key: 'contact_info', width: 32 },
+    { header: 'Original Advertisement (Verbatim)', key: 'original_advertisement', width: 70 },
   ];
 
   // Header Styling
   const headerRow = sheet1.getRow(1);
-  headerRow.height = 30;
+  headerRow.height = 32;
   headerRow.eachCell((cell) => {
     cell.fill = {
       type: 'pattern',
@@ -62,10 +58,6 @@ export async function generateExcelWorkbook(jobs: JobAd[]): Promise<Buffer> {
       job_title: job.job_title || '',
       job_location: job.job_location || '',
       original_advertisement: job.original_advertisement || '',
-      category: job.category || 'Classifieds / Other',
-      qualification: job.qualification || 'N/A',
-      deadline: job.deadline || 'N/A',
-      contact_info: job.contact_info || 'N/A',
     });
 
     row.height = 38;
@@ -81,7 +73,7 @@ export async function generateExcelWorkbook(jobs: JobAd[]): Promise<Buffer> {
       cell.font = { name: 'Calibri', size: 10 };
       cell.alignment = {
         vertical: 'top',
-        horizontal: colNumber === 3 || colNumber === 4 || colNumber === 11 ? 'center' : 'left',
+        horizontal: colNumber === 3 || colNumber === 4 ? 'center' : 'left',
         wrapText: true,
       };
       cell.border = {
@@ -94,30 +86,30 @@ export async function generateExcelWorkbook(jobs: JobAd[]): Promise<Buffer> {
   // Enable Auto-filter on Sheet 1
   sheet1.autoFilter = {
     from: { row: 1, column: 1 },
-    to: { row: jobs.length + 1, column: 12 },
+    to: { row: jobs.length + 1, column: 8 },
   };
 
   // -------------------------------------------------------------
-  // Sheet 2: Yearly Tabs (2026, 2025, 2024)
+  // Sheet 2: Yearly Tabs (2026, 2025, 2024, 2023)
   // -------------------------------------------------------------
-  const years = ['2026', '2025', '2024'];
+  const years = ['2026', '2025', '2024', '2023'];
   years.forEach((yr) => {
     const yearJobs = jobs.filter((j) => j.date && j.date.startsWith(yr));
     if (yearJobs.length > 0) {
       const yrSheet = workbook.addWorksheet(`Year ${yr}`);
       yrSheet.columns = [
+        { header: 'Newspaper', key: 'newspaper', width: 18 },
+        { header: 'Edition', key: 'edition', width: 22 },
         { header: 'Date', key: 'date', width: 14 },
-        { header: 'Edition', key: 'edition', width: 20 },
-        { header: 'Page', key: 'page_number', width: 12 },
-        { header: 'Company', key: 'company', width: 30 },
-        { header: 'Job Title', key: 'job_title', width: 30 },
-        { header: 'Location', key: 'job_location', width: 22 },
-        { header: 'Original Advertisement', key: 'original_advertisement', width: 50 },
-        { header: 'Category', key: 'category', width: 20 },
+        { header: 'Page Number', key: 'page_number', width: 14 },
+        { header: 'Company / Organization', key: 'company', width: 32 },
+        { header: 'Job Title / Designation', key: 'job_title', width: 32 },
+        { header: 'Job Location', key: 'job_location', width: 22 },
+        { header: 'Original Advertisement (Verbatim)', key: 'original_advertisement', width: 60 },
       ];
 
       const yrHeader = yrSheet.getRow(1);
-      yrHeader.height = 26;
+      yrHeader.height = 28;
       yrHeader.eachCell((cell) => {
         cell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: '0F766E' } }; // Teal
         cell.font = { name: 'Calibri', size: 11, bold: true, color: { argb: 'FFFFFF' } };
@@ -126,16 +118,16 @@ export async function generateExcelWorkbook(jobs: JobAd[]): Promise<Buffer> {
 
       yearJobs.forEach((j) => {
         const r = yrSheet.addRow({
-          date: j.date,
-          edition: j.edition,
-          page_number: j.page_number,
-          company: j.company,
-          job_title: j.job_title,
-          job_location: j.job_location,
-          original_advertisement: j.original_advertisement,
-          category: j.category || '',
+          newspaper: j.newspaper || 'Prabhat Khabar',
+          edition: j.edition || '',
+          date: j.date || '',
+          page_number: j.page_number || '',
+          company: j.company || '',
+          job_title: j.job_title || '',
+          job_location: j.job_location || '',
+          original_advertisement: j.original_advertisement || '',
         });
-        r.height = 30;
+        r.height = 32;
         r.eachCell((c) => {
           c.alignment = { vertical: 'top', wrapText: true };
         });
