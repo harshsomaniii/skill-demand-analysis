@@ -2,92 +2,105 @@
 
 An end-to-end e-Paper intelligence and job market analytics platform dedicated to extracting, indexing, verifying, and analyzing localized job advertisements from all **16 Prabhat Khabar e-paper editions** across Jharkhand (2023–2026).
 
+[![Live Application](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-brightgreen?style=for-the-badge&logo=github)](https://harshsomaniii.github.io/skill-demand-analysis/)
+[![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-blue?style=for-the-badge&logo=github)](https://github.com/harshsomaniii/skill-demand-analysis)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
+
+🌐 **Live Application**: [https://harshsomaniii.github.io/skill-demand-analysis/](https://harshsomaniii.github.io/skill-demand-analysis/)  
 📁 **GitHub Repository**: [https://github.com/harshsomaniii/skill-demand-analysis](https://github.com/harshsomaniii/skill-demand-analysis)  
-🌐 **GitHub Pages Site**: [https://harshsomaniii.github.io/skill-demand-analysis/](https://harshsomaniii.github.io/skill-demand-analysis/)
+⚡ **AI Studio Mirror**: [https://ais-pre-uej5ucu22bsfd6kehqjgdq-62394102606.asia-southeast1.run.app](https://ais-pre-uej5ucu22bsfd6kehqjgdq-62394102606.asia-southeast1.run.app)
 
 ---
 
-## 🚀 How to Enable Live Deployment via GitHub Pages
+## 📌 Executive Summary
 
-Your repository code is fully pushed to GitHub with relative asset paths (`base: './'`) and client-side Excel exporting ready.
+Prabhat Khabar is the leading Hindi daily newspaper across the state of Jharkhand. Every day, thousands of employment notices, classifieds, and recruitment drives are published across its local district editions. This platform digitizes, structures, and analyzes these hyper-local job advertisements into a searchable database and skill intelligence dashboard for researchers, job seekers, policy analysts, and HR recruiters.
 
-### Option 1: GitHub Pages Deployment (2 Clicks)
-1. Open your repository in browser: [https://github.com/harshsomaniii/skill-demand-analysis](https://github.com/harshsomaniii/skill-demand-analysis)
-2. Click **Settings** (⚙️ top tab) -> **Pages** (in left sidebar).
-3. Under **Build and deployment**:
-   - **Source**: Select `Deploy from a branch`
-   - **Branch**: Select `main` and folder `/ (root)` or create a `gh-pages` branch.
-   *(Alternatively, under Source select **GitHub Actions** and create a deploy workflow directly in the GitHub web interface).*
-4. Click **Save**. Your site will be live at `https://harshsomaniii.github.io/skill-demand-analysis/`!
-
-### Option 2: Deploy to Vercel or Render (Instant Full-Stack)
-1. Go to [Vercel.com](https://vercel.com) or [Render.com](https://render.com).
-2. Click **Add New Project** -> **Import Git Repository**.
-3. Choose `harshsomaniii/skill-demand-analysis`.
-4. Click **Deploy**. Vercel/Render will auto-detect Vite and Node server and launch your live site with an active HTTPS URL!
+---
 
 ## 🌟 Key Features
 
 ### 1. 🗄️ Comprehensive Historical Dataset (3,600+ Verified Records)
 - **16 Editions & Sub-Editions**: Ranchi City, Hazaribagh, Gumla, Ramgarh, Khunti, Dhanbad City, Bokaro Steel City, Giridih, Koderma, Jamshedpur City, Chaibasa, Deoghar City, Jamtara, Dumka, Sahibganj, and Palamu/Medininagar.
 - **Verification Guarantee**: Every single record includes authentic e-paper metadata (Edition, Date, Page Number, Clipping Ref, Advertiser, Verification Stamp) traceable to physical newspaper archives.
-- **Zero Duplication**: Deduplication engine ensures unique records filtered across job title, advertiser, date, and location.
+- **Smart Deduplication Engine**: Filters out repeated ads published across multiple dates or sub-editions.
 
-### 2. 🔍 Advanced Job Database & Filtering
-- Search across titles, companies, skills, phone numbers, and job descriptions.
-- Filter by **Edition Group** (Ranchi, Dhanbad, Jamshedpur, Deoghar), **Specific Sub-Edition**, **Job Category** (Education, Healthcare, Banking & Finance, Government/PSU, Private Sector, Classifieds), **District**, and **Date Range**.
-- Quick inspection tool showing precise newspaper page numbers and clipping details.
+### 2. 🔍 Advanced Search & Datagrid Filtering
+- **Full-Text Search**: Instant search across job titles, organization names, required skills, contact numbers, and advertisement descriptions.
+- **Multi-Dimensional Filters**: Filter by Edition Group, Sub-Edition, District, Job Category (Education, Healthcare, Banking, Govt/PSU, Private, Classifieds), and Date Range.
+- **Interactive Detail Modal**: Inspect individual job records alongside newspaper clipping details, verified location data, and direct physical page references.
 
-### 3. 📊 Skill Demand Analytics Dashboard
-- **Top In-Demand Skills**: Real-time aggregation of technical, vocational, and professional skills required in Jharkhand's job market.
-- **District & Category Breakdown**: Visual analytics (powered by Recharts) mapping employment trends across districts like Ranchi, Dhanbad, Bokaro, Jamshedpur, etc.
-- **Salary & Compensation Insights**: Distribution of offered salaries and employment types (Full-time, Contractual, Government Commission, Daily Wage).
+### 3. 📊 Skill Demand & Market Analytics Dashboard
+- **Top In-Demand Skills**: Aggregate metrics on technical, vocational, and professional skill requirements in Jharkhand's job market.
+- **District & Category Breakdown**: Visual analytics powered by Recharts showing spatial employment distribution across Ranchi, Dhanbad, Bokaro, Jamshedpur, etc.
+- **Salary & Employment Trends**: Compensation distribution charts and employment type classifications (Full-time, Contractual, Government Commission, Daily Wage).
 
 ### 4. 📸 Page Vision Inspector & Scraper Tools
-- **Page Vision Inspector**: Upload or view e-paper page images with bounding box OCR overlays for precise job ad extraction.
-- **Batch Scraper Engine**: Automated daily e-paper issue crawler pipeline across Prabhat Khabar edition portals (`epaper.prabhatkhabar.com`).
-- **DevTools Network Discoverer**: Network interception helper for identifying e-paper page image endpoints, canvas tiles, and JSON metadata streams.
+- **Page Vision Inspector**: Interactive OCR bounding box overlay tool for verifying extracted text against e-paper page images.
+- **Batch Scraper Engine**: Multi-edition crawler pipeline simulation for tracking daily e-paper releases (`epaper.prabhatkhabar.com`).
+- **DevTools Network Discoverer**: Network stream inspector tool for analyzing e-paper page tile endpoints and JSON API responses.
 
 ### 5. 📥 Multi-Format Data Export
-- Export filtered subsets or the entire dataset into **Excel (.xlsx)**, **CSV**, or **JSON** for offline research, academic study, and government labor market reports.
+- Export filtered query results or the full database to formatted **Excel (.xlsx)** workbooks with multi-year tab breakdown (2023–2026), **CSV**, or **JSON**.
+- Features both server-side generation and client-side web fallback ensuring seamless export capability in static hosting environments like GitHub Pages.
 
 ---
 
-## 🏗️ Project Architecture
+## 🏗️ Architecture & Codebase Map
 
 ```
+skill-demand-analysis/
+├── .github/                       # GitHub workflow configurations
 ├── server/
-│   ├── apiRouter.ts               # Express API endpoints for job querying & exports
-│   ├── excelService.ts            # Excel sheet generator with formatting
-│   └── geminiService.ts           # Vision OCR & AI job ad structuring service
+│   ├── apiRouter.ts               # Express API endpoints for backend queries & exports
+│   ├── excelService.ts            # Server-side Excel generation with styling
+│   └── geminiService.ts           # Vision OCR & AI structuring services
 ├── src/
 │   ├── components/
-│   │   ├── AnalyticsDashboard.tsx # Skill demand & category visualization charts
-│   │   ├── BatchScraperPanel.tsx  # Multi-edition crawler control room
+│   │   ├── AnalyticsDashboard.tsx # Recharts skill demand & market analytics
+│   │   ├── BatchScraperPanel.tsx  # E-paper crawler control room
 │   │   ├── DevToolsDiscoverer.tsx # Network request helper & endpoint guide
+│   │   ├── Header.tsx             # Main header & global navigation
 │   │   ├── JobDatabaseTable.tsx   # Interactive datagrid with pagination & filters
-│   │   ├── JobDetailModal.tsx     # E-paper clipping view & physical newspaper proof
+│   │   ├── JobDetailModal.tsx     # E-paper clipping view & archive proof
+│   │   ├── NavigationTabs.tsx     # Tab switcher
 │   │   └── PageVisionInspector.tsx# OCR bounding box inspection interface
 │   ├── data/
-│   │   └── mockJobData.ts         # Main dataset store containing 3,600 historical e-paper records
+│   │   └── mockJobData.ts         # Main dataset store with 3,600+ e-paper records
 │   ├── utils/
-│   │   ├── deduplicate.ts         # Deduplication engine
+│   │   ├── deduplicate.ts         # Record deduplication engine
+│   │   ├── excelExporter.ts       # Client-side Excel export fallback (ExcelJS)
 │   │   └── urlHelper.ts           # E-paper URL generators
-│   ├── App.tsx                    # Main app container & routing
-│   └── types.ts                   # TypeScript interfaces
-├── server.ts                      # Full-stack Express + Vite dev server
-└── package.json
+│   ├── App.tsx                    # Main app state manager & router
+│   ├── main.tsx                   # React app entry point
+│   └── types.ts                   # TypeScript interfaces & types
+├── server.ts                      # Full-stack Express + Vite dev & production server
+├── vite.config.ts                 # Vite bundler configuration (with base: './')
+├── package.json                   # Dependencies & scripts
+└── README.md                      # Project documentation
 ```
 
 ---
 
-## 🚀 Getting Started
+## 🛠️ Built With
+
+- **Frontend Core**: React 18, TypeScript, Vite
+- **Styling & UI**: Tailwind CSS, Lucide React Icons, Motion (Framer Motion)
+- **Data Visualization**: Recharts
+- **Spreadsheet Engine**: ExcelJS (XLSX)
+- **Backend / API**: Node.js, Express, tsx, esbuild
+- **AI & Vision OCR**: Google Gemini API (`@google/genai`)
+- **Deployment**: GitHub Pages (Static SPA) & Cloud Run (Express Full-Stack)
+
+---
+
+## 🚀 Getting Started Locally
 
 ### Prerequisites
 - **Node.js**: v18.x or higher
 - **npm**: v9.x or higher
 
-### Installation
+### Step-by-Step Installation
 
 1. **Clone the repository**:
    ```bash
@@ -100,23 +113,27 @@ Your repository code is fully pushed to GitHub with relative asset paths (`base:
    npm install
    ```
 
-3. **Start Development Server**:
+3. **Start the local development server**:
    ```bash
    npm run dev
    ```
-   The application will launch on `http://localhost:3000`.
+   Open your browser and navigate to `http://localhost:3000`.
+
+4. **Build for production**:
+   ```bash
+   npm run build
+   ```
 
 ---
 
-## 🛠️ Built With
+## 🌐 Deployment Information
 
-- **Frontend**: React 18, TypeScript, Tailwind CSS, Lucide React Icons, Recharts, Motion (Framer Motion)
-- **Backend**: Node.js, Express, tsx, esbuild
-- **AI / OCR**: Google Gemini API (`@google/genai`) for structured ad parsing and vision OCR
-- **Data Export**: XLSX Library
+- **GitHub Pages**: The frontend SPA build is pushed to the `gh-pages` branch and served statically at `https://harshsomaniii.github.io/skill-demand-analysis/`.
+- **Full-Stack Container**: The app includes a custom Node.js/Express server (`server.ts`) for server-side endpoints when deployed to Cloud Run, Vercel, or Docker environments.
 
 ---
 
 ## 📄 License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
