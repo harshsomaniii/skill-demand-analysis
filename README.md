@@ -2,19 +2,29 @@
 
 An end-to-end e-Paper intelligence and job market analytics platform dedicated to extracting, indexing, verifying, and analyzing localized job advertisements from all **16 Prabhat Khabar e-paper editions** across Jharkhand (2023–2026).
 
-🌐 **Live GitHub Pages URL**: [https://harshsomaniii.github.io/skill-demand-analysis/](https://harshsomaniii.github.io/skill-demand-analysis/)  
-⚡ **AI Studio Preview**: [https://ais-pre-uej5ucu22bsfd6kehqjgdq-62394102606.asia-southeast1.run.app](https://ais-pre-uej5ucu22bsfd6kehqjgdq-62394102606.asia-southeast1.run.app)
+📁 **GitHub Repository**: [https://github.com/harshsomaniii/skill-demand-analysis](https://github.com/harshsomaniii/skill-demand-analysis)  
+🌐 **GitHub Pages Site**: [https://harshsomaniii.github.io/skill-demand-analysis/](https://harshsomaniii.github.io/skill-demand-analysis/)
 
 ---
 
-## 🚀 GitHub Pages Automated Deployment
-This repository is configured with GitHub Actions (`.github/workflows/deploy.yml`) to automatically build and deploy to **GitHub Pages** on every push to `main`.
+## 🚀 How to Enable Live Deployment via GitHub Pages
 
-### To Enable GitHub Pages on your repository:
-1. Go to your repository on GitHub: `https://github.com/harshsomaniii/skill-demand-analysis`
-2. Click **Settings** ⚙️ -> **Pages** (in the left sidebar).
-3. Under **Build and deployment** -> **Source**, select **GitHub Actions**.
-4. The workflow will automatically run and publish your live app at `https://harshsomaniii.github.io/skill-demand-analysis/`!
+Your repository code is fully pushed to GitHub with relative asset paths (`base: './'`) and client-side Excel exporting ready.
+
+### Option 1: GitHub Pages Deployment (2 Clicks)
+1. Open your repository in browser: [https://github.com/harshsomaniii/skill-demand-analysis](https://github.com/harshsomaniii/skill-demand-analysis)
+2. Click **Settings** (⚙️ top tab) -> **Pages** (in left sidebar).
+3. Under **Build and deployment**:
+   - **Source**: Select `Deploy from a branch`
+   - **Branch**: Select `main` and folder `/ (root)` or create a `gh-pages` branch.
+   *(Alternatively, under Source select **GitHub Actions** and create a deploy workflow directly in the GitHub web interface).*
+4. Click **Save**. Your site will be live at `https://harshsomaniii.github.io/skill-demand-analysis/`!
+
+### Option 2: Deploy to Vercel or Render (Instant Full-Stack)
+1. Go to [Vercel.com](https://vercel.com) or [Render.com](https://render.com).
+2. Click **Add New Project** -> **Import Git Repository**.
+3. Choose `harshsomaniii/skill-demand-analysis`.
+4. Click **Deploy**. Vercel/Render will auto-detect Vite and Node server and launch your live site with an active HTTPS URL!
 
 ## 🌟 Key Features
 
