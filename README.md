@@ -2,9 +2,6 @@
 
 An end-to-end e-Paper intelligence and job market analytics platform dedicated to extracting, indexing, verifying, and analyzing localized job advertisements from all **16 Prabhat Khabar e-paper editions** across Jharkhand (2023–2026).
 
-[![Live Application](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-brightgreen?style=for-the-badge&logo=github)](https://harshsomaniii.github.io/skill-demand-analysis/)
-[![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-blue?style=for-the-badge&logo=github)](https://github.com/harshsomaniii/skill-demand-analysis)
-
 
 🌐 **Live Application**: [https://harshsomaniii.github.io/skill-demand-analysis/](https://harshsomaniii.github.io/skill-demand-analysis/)  
 📁 **GitHub Repository**: [https://github.com/harshsomaniii/skill-demand-analysis](https://github.com/harshsomaniii/skill-demand-analysis)  
@@ -133,7 +130,5 @@ skill-demand-analysis/
 
 ---
 
-## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
