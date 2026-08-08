@@ -2,7 +2,8 @@
 
 An end-to-end e-Paper intelligence and job market analytics platform dedicated to extracting, indexing, verifying, and analyzing localized job advertisements from all **16 Prabhat Khabar e-paper editions** across Jharkhand (2023–2026).
 
-🌐 **Live Published Application**: [https://ais-pre-uej5ucu22bsfd6kehqjgdq-62394102606.asia-southeast1.run.app](https://ais-pre-uej5ucu22bsfd6kehqjgdq-62394102606.asia-southeast1.run.app)
+🌐 **Live Published Application**: `https://ais-pre-uej5ucu22bsfd6kehqjgdq-62394102606.asia-southeast1.run.app`  
+Direct Link: [Launch Live App](https://ais-pre-uej5ucu22bsfd6kehqjgdq-62394102606.asia-southeast1.run.app)
 
 ---
 
