@@ -2,10 +2,19 @@
 
 An end-to-end e-Paper intelligence and job market analytics platform dedicated to extracting, indexing, verifying, and analyzing localized job advertisements from all **16 Prabhat Khabar e-paper editions** across Jharkhand (2023–2026).
 
-🌐 **Live Published Application**: `https://ais-pre-uej5ucu22bsfd6kehqjgdq-62394102606.asia-southeast1.run.app`  
-Direct Link: [Launch Live App](https://ais-pre-uej5ucu22bsfd6kehqjgdq-62394102606.asia-southeast1.run.app)
+🌐 **Live GitHub Pages URL**: [https://harshsomaniii.github.io/skill-demand-analysis/](https://harshsomaniii.github.io/skill-demand-analysis/)  
+⚡ **AI Studio Preview**: [https://ais-pre-uej5ucu22bsfd6kehqjgdq-62394102606.asia-southeast1.run.app](https://ais-pre-uej5ucu22bsfd6kehqjgdq-62394102606.asia-southeast1.run.app)
 
 ---
+
+## 🚀 GitHub Pages Automated Deployment
+This repository is configured with GitHub Actions (`.github/workflows/deploy.yml`) to automatically build and deploy to **GitHub Pages** on every push to `main`.
+
+### To Enable GitHub Pages on your repository:
+1. Go to your repository on GitHub: `https://github.com/harshsomaniii/skill-demand-analysis`
+2. Click **Settings** ⚙️ -> **Pages** (in the left sidebar).
+3. Under **Build and deployment** -> **Source**, select **GitHub Actions**.
+4. The workflow will automatically run and publish your live app at `https://harshsomaniii.github.io/skill-demand-analysis/`!
 
 ## 🌟 Key Features
 

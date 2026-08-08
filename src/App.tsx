@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { JobAd } from './types';
 import { FULL_HISTORICAL_JOB_ADS } from './data/mockJobData';
 import { deduplicateJobs } from './utils/deduplicate';
+import { exportJobsToExcelClient } from './utils/excelExporter';
 import { Header } from './components/Header';
 import { NavigationTabs, TabType } from './components/NavigationTabs';
 import { JobDatabaseTable } from './components/JobDatabaseTable';
@@ -34,12 +35,11 @@ export default function App() {
     }
   };
 
-  // Excel export trigger
+  // Excel export trigger with server & client fallback
   const handleExportExcel = async (subsetJobs?: JobAd[]) => {
     setIsExporting(true);
+    const targetList = subsetJobs && subsetJobs.length > 0 ? subsetJobs : jobs;
     try {
-      const targetList = subsetJobs && subsetJobs.length > 0 ? subsetJobs : jobs;
-
       const response = await fetch('/api/export-excel', {
         method: 'POST',
         headers: {
@@ -49,7 +49,7 @@ export default function App() {
       });
 
       if (!response.ok) {
-        throw new Error('Failed to generate Excel file');
+        throw new Error('Server export endpoint unavailable');
       }
 
       const blob = await response.blob();
@@ -62,8 +62,13 @@ export default function App() {
       window.URL.revokeObjectURL(url);
       document.body.removeChild(a);
     } catch (error: any) {
-      console.error('Excel export error:', error);
-      alert(`Error exporting Excel: ${error.message || 'Server error'}`);
+      console.warn('Server Excel export failed or running as static deployment. Fallback to client-side Excel generation:', error);
+      try {
+        await exportJobsToExcelClient(targetList);
+      } catch (clientErr: any) {
+        console.error('Client Excel export error:', clientErr);
+        alert(`Error exporting Excel: ${clientErr.message || 'Export error'}`);
+      }
     } finally {
       setIsExporting(false);
     }
