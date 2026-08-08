@@ -4,11 +4,11 @@ An end-to-end e-Paper intelligence and job market analytics platform dedicated t
 
 [![Live Application](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-brightgreen?style=for-the-badge&logo=github)](https://harshsomaniii.github.io/skill-demand-analysis/)
 [![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-blue?style=for-the-badge&logo=github)](https://github.com/harshsomaniii/skill-demand-analysis)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
+
 
 🌐 **Live Application**: [https://harshsomaniii.github.io/skill-demand-analysis/](https://harshsomaniii.github.io/skill-demand-analysis/)  
 📁 **GitHub Repository**: [https://github.com/harshsomaniii/skill-demand-analysis](https://github.com/harshsomaniii/skill-demand-analysis)  
-⚡ **AI Studio Mirror**: [https://ais-pre-uej5ucu22bsfd6kehqjgdq-62394102606.asia-southeast1.run.app](https://ais-pre-uej5ucu22bsfd6kehqjgdq-62394102606.asia-southeast1.run.app)
+
 
 ---
 
