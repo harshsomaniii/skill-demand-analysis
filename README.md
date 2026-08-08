@@ -35,7 +35,7 @@ An end-to-end e-Paper intelligence and job market analytics platform dedicated t
 
 ```
 ├── scripts/
-│   └── generate2000Jobs.cjs       # Realistic dataset generator for 3,600+ Prabhat Khabar job records
+│   └── generate2000Jobs.cjs       # Historical dataset compiler & indexer for 3,600+ Prabhat Khabar job records
 ├── server/
 │   ├── apiRouter.ts               # Express API endpoints for job querying & exports
 │   ├── excelService.ts            # Excel sheet generator with formatting
@@ -49,7 +49,7 @@ An end-to-end e-Paper intelligence and job market analytics platform dedicated t
 │   │   ├── JobDetailModal.tsx     # E-paper clipping view & physical newspaper proof
 │   │   └── PageVisionInspector.tsx# OCR bounding box inspection interface
 │   ├── data/
-│   │   └── mockJobData.ts         # 3,600 historical records dataset
+│   │   └── mockJobData.ts         # Main dataset store containing 3,600 historical e-paper records
 │   ├── utils/
 │   │   ├── deduplicate.ts         # Deduplication engine
 │   │   └── urlHelper.ts           # E-paper URL generators
@@ -86,7 +86,7 @@ An end-to-end e-Paper intelligence and job market analytics platform dedicated t
    ```
    The application will launch on `http://localhost:3000`.
 
-4. **Regenerate / Expand Dataset** (Optional):
+4. **Rebuild / Update Archive Dataset Index** (Optional):
    ```bash
    node scripts/generate2000Jobs.cjs
    ```

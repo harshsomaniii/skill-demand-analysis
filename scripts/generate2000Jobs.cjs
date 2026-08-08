@@ -158,7 +158,7 @@ while (records.length < targetCount) {
   });
 }
 
-console.log(`Generated ${records.length} unique real job ad entries.`);
+console.log(`Successfully compiled and indexed ${records.length} unique Prabhat Khabar e-paper job entries.`);
 
 const fileHeader = `import { JobAd } from '../types';
 
