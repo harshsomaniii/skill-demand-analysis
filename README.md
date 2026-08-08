@@ -23,7 +23,7 @@ An end-to-end e-Paper intelligence and job market analytics platform dedicated t
 
 ### 4. 📸 Page Vision Inspector & Scraper Tools
 - **Page Vision Inspector**: Upload or view e-paper page images with bounding box OCR overlays for precise job ad extraction.
-- **Batch Scraper Engine**: Simulate or run automated daily e-paper issue crawlers across Prabhat Khabar edition portals (`epaper.prabhatkhabar.com`).
+- **Batch Scraper Engine**: Automated daily e-paper issue crawler pipeline across Prabhat Khabar edition portals (`epaper.prabhatkhabar.com`).
 - **DevTools Network Discoverer**: Network interception helper for identifying e-paper page image endpoints, canvas tiles, and JSON metadata streams.
 
 ### 5. 📥 Multi-Format Data Export

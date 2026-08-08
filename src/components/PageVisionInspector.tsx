@@ -63,7 +63,7 @@ export const PageVisionInspector: React.FC<PageVisionInspectorProps> = ({
       <text x="750" y="95" font-family="sans-serif" font-size="14" text-anchor="end" fill="#0284c7">JHARKHAND NEWS &amp; RECRUITMENT</text>
       <line x1="40" y1="105" x2="760" y2="105" stroke="#0f172a" stroke-width="1"/>
 
-      <!-- Simulated Newspaper Layout Columns -->
+      <!-- Newspaper Layout Columns -->
       ${
         type === 'p8'
           ? `
