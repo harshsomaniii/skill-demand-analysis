@@ -1,11 +1,15 @@
 import express from 'express';
 import path from 'path';
 import { createServer as createViteServer } from 'vite';
+import { apiRouter } from './server/apiRouter';
 
 const app = express();
 const PORT = 3000;
 
 app.use(express.json({ limit: '10mb' }));
+
+// Mount API router
+app.use('/api', apiRouter);
 
 // ============================================================
 // JHARKHAND EDITIONS CONFIGURATION
