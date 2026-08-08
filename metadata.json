@@ -1,0 +1,6 @@
+{
+  "name": "Prabhat Khabar E-Paper Job Extraction & Excel Pipeline",
+  "description": "Automated recruitment advertisement scraper and vision parser for Prabhat Khabar Jharkhand editions (2024 to present), extracting structured job records into Excel format.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
