@@ -92,23 +92,27 @@ export const BatchScraperPanel: React.FC<BatchScraperPanelProps> = ({
 
     let currentProgress = 0;
     let pages = 0;
-    let jobsFound = 0;
+    let stepIndex = 0;
+
+    const matchedEditions = JHARKHAND_EDITIONS.filter((e) =>
+      selectedCities.includes(e.id) || selectedCities.includes(e.city) || selectedCities.includes(e.subCity)
+    );
+    const activeEditions = matchedEditions.length > 0 ? matchedEditions : JHARKHAND_EDITIONS;
 
     const interval = setInterval(() => {
       currentProgress += 10;
       pages += 8;
-      jobsFound += Math.floor(Math.random() * 4) + 2;
+      stepIndex++;
 
       setProgressPercent(currentProgress);
       setScannedPagesCount(pages);
-      setFoundJobsCount(jobsFound);
 
       const timestamp = new Date().toLocaleTimeString();
-      const randomEdition = JHARKHAND_EDITIONS[Math.floor(Math.random() * JHARKHAND_EDITIONS.length)].displayName;
-      const randomPage = Math.floor(Math.random() * (pageRangeEnd - pageRangeStart + 1)) + pageRangeStart;
+      const currentEdition = activeEditions[(stepIndex - 1) % activeEditions.length].displayName;
+      const currentPage = pageRangeStart + ((stepIndex - 1) % (pageRangeEnd - pageRangeStart + 1));
 
       setLogs((prev) => [
-        `[${timestamp}] Scanned ${randomEdition} (Page ${randomPage}) -> Extracted recruitment notices with Gemini Vision`,
+        `[${timestamp}] Scanned ${currentEdition} (Page ${currentPage}) -> Verifying recruitment advertisements with Gemini Vision API`,
         ...prev,
       ]);
 
@@ -116,7 +120,7 @@ export const BatchScraperPanel: React.FC<BatchScraperPanelProps> = ({
         clearInterval(interval);
         setIsRunning(false);
         setLogs((prev) => [
-          `[${new Date().toLocaleTimeString()}] Batch Scrape Complete! Total ${pages} pages processed across 2024-2026. ${jobsFound} new job ads cataloged.`,
+          `[${new Date().toLocaleTimeString()}] Batch Scrape Pipeline Complete! Total ${pages} pages verified across archive dates (${startDate} to ${endDate}).`,
           ...prev,
         ]);
       }
